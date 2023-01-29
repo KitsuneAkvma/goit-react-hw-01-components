@@ -1,13 +1,22 @@
+import statsCSS from './stats.module.css';
+import randomColor from 'randomcolor';
+
 const Statistics = statsProps => {
   return (
-    <section className="statistics">
-      <h2 className="title">Upload stats</h2>
+    <section className={statsCSS.statistics}>
+      <h2 className={statsCSS.title}>Upload stats</h2>
 
-      <ul className="stat-list">
+      <ul className={statsCSS.statList}>
         {statsProps.stats.map(item => (
-          <li className="item" key={item.id}>
-            <span className="label">{item.label}</span>
-            <span className="percentage"> {item.percentage}%</span>
+          <li
+            className={statsCSS.item}
+            key={item.id}
+            style={{ backgroundColor: randomColor(),
+              width:`${item.percentage}%`
+             }}
+          >
+            <span className={statsCSS.label}>{item.label}</span>
+            <span className={statsCSS.percentage}> {item.percentage}%</span>
           </li>
         ))}
       </ul>

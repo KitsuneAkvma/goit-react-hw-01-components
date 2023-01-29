@@ -1,5 +1,5 @@
 import userCSS from './user.module.css';
-
+import { usersIcon, eyeIcon, likeIcon } from 'components/svgs';
 const Profile = profileProps => {
   return (
     <div className={userCSS.profile}>
@@ -9,23 +9,29 @@ const Profile = profileProps => {
           alt="User avatar"
           className={userCSS.avatar}
         />
-        <p className="name">{profileProps.username}</p>
-        <p className="tag">@{profileProps.tag}</p>
-        <p className="location">{profileProps.location}</p>
+        <p className={userCSS.name}>{profileProps.username}</p>
+        <p className={userCSS.tag}>@{profileProps.tag}</p>
+        <p className={userCSS.location}>{profileProps.location}</p>
       </div>
 
       <ul className={userCSS.stats}>
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{profileProps.stats.followers}</span>
+        <li className={userCSS.statsItem}>
+          <span className={userCSS.label}>Followers</span>
+          <span className={userCSS.quantity}>
+            {profileProps.stats.followers}
+          </span>
         </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{profileProps.stats.views}</span>
+        {usersIcon}
+
+        <li className={userCSS.statsItem}>
+          {eyeIcon}
+          <span className={userCSS.label}>Views</span>
+          <span className={userCSS.quantity}>{profileProps.stats.views}</span>
         </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{profileProps.stats.likes}</span>
+        <li className={userCSS.statsItem}>
+          {likeIcon}
+          <span className={userCSS.label}>Likes</span>
+          <span className={userCSS.quantity}>{profileProps.stats.likes}</span>
         </li>
       </ul>
     </div>

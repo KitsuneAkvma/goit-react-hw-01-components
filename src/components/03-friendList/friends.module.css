@@ -22,6 +22,12 @@
   box-shadow: 0px 0px 24px -7px rgba(0, 0, 0, 0.75);
 
   text-align: center;
+
+  transition: width 0.3s ease-out;
+  cursor: pointer;
+}
+.friend:hover {
+  width: 35rem;
 }
 .status {
   position: absolute;

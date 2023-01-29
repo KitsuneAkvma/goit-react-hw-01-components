@@ -1,20 +1,46 @@
+import transactionsCSS from './transactions.module.css';
+function selectPaymentColor(type) {
+  switch (type) {
+    case 'invoice':
+      return { backgroundColor: '#7dbfcf' };
+    case 'payment':
+      return { backgroundColor: '#cf7d7d' };
+    case 'withdrawal':
+      return { backgroundColor: '#cf7d7d' };
+    case 'deposit':
+      return { backgroundColor: '#80cf7d' };
+    default:
+      return { backgroundColor: '#f6fefe' };
+  }
+}
 const TransactionHistory = transactionsProps => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+    <table className={transactionsCSS.transactionHitory}>
+      <thead className={transactionsCSS.tableHeader}>
+        <tr className={transactionsCSS.tableRow}>
+          <th className={transactionsCSS.tableHeadCell}>Type</th>
+          <th className={transactionsCSS.tableHeadCell}>Amount</th>
+          <th className={transactionsCSS.tableHeadCell}>Currency</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className={transactionsCSS.tableBody}>
         {transactionsProps.items.map(item => (
-          <tr key={item.id}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
+          <tr
+            className={transactionsCSS.tableRow}
+            key={item.id}
+            style={selectPaymentColor(item.type)}
+          >
+            <td className={transactionsCSS.tableCell}>
+              {
+                (item.type =
+                  item.type[0].toUpperCase() + item.type.substring(1)) // Capitalization
+              }
+            </td>
+            <td className={transactionsCSS.tableCell}>{item.amount}</td>
+            <td className={transactionsCSS.tableCell}>
+              {item.currency.slice(0, 3)}
+            </td>
           </tr>
         ))}
       </tbody>

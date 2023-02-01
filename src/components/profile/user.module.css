@@ -97,6 +97,14 @@
   width: 2em;
   padding: 0.5em;
 
-  background-color: rgba(173, 190, 209, 0.632);
+  background-color: #adbed1a1;
   border-radius: 50em;
+
+  transition: background-color 0.4s ease-in, fill 0.4s ease-out;
+}
+.usersIcon:hover,
+.eyeIcon:hover,
+.likeIcon:hover {
+  background-color: transparent;
+  fill: #78838ff5;
 }

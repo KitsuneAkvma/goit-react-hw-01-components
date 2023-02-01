@@ -4,13 +4,13 @@ import transactionsCSS from './transactions.module.css';
 
 function selectPaymentColor(type) {
   switch (type) {
-    case 'Invoice':
+    case 'invoice':
       return { backgroundColor: '#7dbfcf' };
-    case 'Payment':
+    case 'payment':
       return { backgroundColor: '#cf7d7d' };
-    case 'Withdrawal':
+    case 'withdrawal':
       return { backgroundColor: '#cf7d7d' };
-    case 'Deposit':
+    case 'deposit':
       return { backgroundColor: '#80cf7d' };
     default:
       return { backgroundColor: '#f6fefe' };

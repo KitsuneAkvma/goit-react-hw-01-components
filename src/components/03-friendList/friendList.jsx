@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
+
 import friendsCSS from './friends.module.css';
 
-const FriendList = friendListProps => {
+const FriendList = ({ friends }) => {
   return (
     <ul className={friendsCSS.friendList}>
-      {friendListProps.friends.map(friend => (
+      {friends.map(friend => (
         <li className={friendsCSS.friend} key={friend.id}>
           <span
             className={friendsCSS.status}
@@ -26,4 +28,9 @@ const FriendList = friendListProps => {
     </ul>
   );
 };
+
+FriendList.propTypes = {
+  friends: PropTypes.array.isRequired, // in case of one friend
+};
+
 export default FriendList;

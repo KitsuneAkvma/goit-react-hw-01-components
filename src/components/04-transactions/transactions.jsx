@@ -1,19 +1,22 @@
+import PropTypes from 'prop-types';
+
 import transactionsCSS from './transactions.module.css';
+
 function selectPaymentColor(type) {
   switch (type) {
-    case 'invoice':
+    case 'Invoice':
       return { backgroundColor: '#7dbfcf' };
-    case 'payment':
+    case 'Payment':
       return { backgroundColor: '#cf7d7d' };
-    case 'withdrawal':
+    case 'Withdrawal':
       return { backgroundColor: '#cf7d7d' };
-    case 'deposit':
+    case 'Deposit':
       return { backgroundColor: '#80cf7d' };
     default:
       return { backgroundColor: '#f6fefe' };
   }
 }
-const TransactionHistory = transactionsProps => {
+const TransactionHistory = ({ items }) => {
   return (
     <table className={transactionsCSS.transactionHitory}>
       <thead className={transactionsCSS.tableHeader}>
@@ -25,7 +28,7 @@ const TransactionHistory = transactionsProps => {
       </thead>
 
       <tbody className={transactionsCSS.tableBody}>
-        {transactionsProps.items.map(item => (
+        {items.map(item => (
           <tr
             className={transactionsCSS.tableRow}
             key={item.id}
@@ -47,4 +50,9 @@ const TransactionHistory = transactionsProps => {
     </table>
   );
 };
+
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired,
+};
+
 export default TransactionHistory;

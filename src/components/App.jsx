@@ -22,11 +22,10 @@ export const App = () => {
         location={userData.location}
         avatar={userData.avatar}
         stats={userData.stats}
-        key="0"
       />
-      <Statistics title="Upload stats" stats={statsData} key="1" />
-      <FriendList friends={friendListData} key="2" />;
-      <TransactionHistory items={transactionsData} key="3" />;
+      <Statistics title="Upload stats" stats={statsData} />
+      <FriendList friends={friendListData} />;
+      <TransactionHistory items={transactionsData} />;
     </div>
   );
 };

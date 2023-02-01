@@ -1,4 +1,4 @@
-import userCSS from '../components/01-profile/user.module.css';
+import userCSS from '../components/profile/user.module.css';
 
 export const usersIcon = (
   <svg

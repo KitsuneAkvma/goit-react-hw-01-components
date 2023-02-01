@@ -1,21 +1,21 @@
 import React from 'react';
-import '../index.css';
+import AppCSS from './App.module.css';
 
-import Profile from './01-profile/user.jsx';
-import userData from './01-profile/user.json';
+import Profile from './profile/user.jsx';
+import userData from './profile/user.json';
 
-import Statistics from './02-stats/stats.jsx';
-import statsData from './02-stats/data.json';
+import Statistics from './stats/stats.jsx';
+import statsData from './stats/data.json';
 
-import FriendList from './03-friendList/friendList.jsx';
-import friendListData from './03-friendList/friends.json';
+import FriendList from './friendList/friendList.jsx';
+import friendListData from './friendList/friends.json';
 
-import TransactionHistory from './04-transactions/transactions.jsx';
-import transactionsData from './04-transactions/transactions.json';
+import TransactionHistory from './transactions/transactions.jsx';
+import transactionsData from './transactions/transactions.json';
 
 export const App = () => {
   return (
-    <div className="app">
+    <div className={AppCSS}>
       <Profile
         username={userData.username}
         tag={userData.tag}
